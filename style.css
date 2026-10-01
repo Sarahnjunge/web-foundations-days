@@ -1,10 +1,11 @@
+
 /* 1. Reset: predictable sizing and no default body margin */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
- 
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -12,7 +13,7 @@ body {
   color: #222;
   line-height: 1.5;
 }
- 
+
 /* 2. Header */
 header {
   background-color: #8e0000;
@@ -20,38 +21,58 @@ header {
   text-align: center;
   padding: 24px 16px;
 }
- 
+
 header h1 {
   margin: 0;
 }
- 
-/* 3. Centre the main content and limit its width */
+
+/* 3. Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background-color: #8e0000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0ba184;
+}
+
+/* 4. Main content and sections */
 main {
   max-width: 640px;
-  margin: 24px auto;   /* auto left/right margins centre a block */
+  margin: 24px auto;
   padding: 0 16px;
 }
- 
+
 section {
-  background: white;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
- 
-/* 4. Form layout with Flexbox */
+
+/* 5. Note form layout with Flexbox */
 #note-form {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
- 
+
 #note-form label {
-  width: 100%;          /* label on its own line */
+  width: 100%;
   font-weight: bold;
 }
- 
+
 #note-input {
   flex: 1;
   padding: 10px;
@@ -59,7 +80,8 @@ section {
   border-radius: 6px;
   font-size: 1rem;
 }
- 
+
+/* 6. Buttons */
 button {
   background-color: #0ba184;
   color: white;
@@ -68,18 +90,19 @@ button {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
- 
+
 button:hover {
   background-color: #088a70;
 }
- 
-/* 5. Notes list */
+
+/* 7. Notes list */
 #notes-list {
-  list-style: none;     /* remove bullet points */
+  list-style: none;
   padding: 0;
 }
- 
+
 .note {
   background-color: #fffbe6;
   border-left: 4px solid #0ba184;
@@ -87,44 +110,15 @@ button:hover {
   margin-bottom: 10px;
   border-radius: 6px;
 }
- 
-/* 6. Footer */
-footer {
-  text-align: center;
-  color: #777;
-  padding: 16px;
-}
- 
-/* 7. Phones */
-@media (max-width: 600px) {
-  #note-form {
-    flex-direction: column;
-  }
-}
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-main {
-  max-width: 640px;
-  margin: 24px auto;
-}
-
-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
+/* 8. Features grid */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
 }
 
+/* 9. Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -143,6 +137,7 @@ th {
   color: white;
 }
 
+/* 10. Feedback form */
 #feedback-form {
   display: flex;
   flex-direction: column;
@@ -167,28 +162,14 @@ th {
   font-weight: bold;
 }
 
-button {
-  transition: background-color 0.3s ease;
+/* 11. Footer */
+footer {
+  text-align: center;
+  color: #777;
+  padding: 16px;
 }
 
-button:hover {
-  background-color: #088a70;
-}
-
-
-nav a {
-  text-decoration: none;
-  color: white;
-  background-color: #8e0000;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-  color: #0ba184;
-}
-
+/* 12. Responsive layout for phones */
 @media (max-width: 600px) {
   header {
     padding: 16px 10px;
@@ -196,5 +177,9 @@ nav a:hover {
 
   header h1 {
     font-size: 1.5rem;
+  }
+
+  #note-form {
+    flex-direction: column;
   }
 }
