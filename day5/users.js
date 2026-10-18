@@ -73,6 +73,7 @@ loadButton.addEventListener("click", loadUsers);
 
 filterInput.addEventListener("input", function () {
     const searchText = filterInput.value.trim().toLowerCase();
+
     const filteredUsers = users.filter(function (user) {
         return user.name.toLowerCase().includes(searchText);
     });
